@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMaster Pro - Interactive Web App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Enhanced Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="logo">
+                    <span class="logo-icon">📋</span>
+                    TaskMaster Pro
+                </div>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">
+                        <span class="nav-icon">🏠</span>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#form" class="nav-link">
+                        <span class="nav-icon">📧</span>
+                        Contact
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#todo" class="nav-link">
+                        <span class="nav-icon">✅</span>
+                        Tasks
+                    </a>
+                </li>
+            </ul>
+            
+            <!-- Mobile Menu Toggle -->
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome to TaskMaster Pro</h1>
+            <p class="hero-subtitle">Manage your tasks efficiently with our interactive web application</p>
+            <div class="hero-buttons">
+                <a href="#todo" class="btn btn-primary">Get Started</a>
+                <a href="#form" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Contact Form Section -->
+        <section class="section" id="form">
+            <h2 class="section-title">
+                <span class="title-icon">📧</span>
+                Get In Touch
+            </h2>
+            <div class="success-message" id="successMessage">
+                <span class="success-icon">✅</span>
+                Thank you! Your message has been sent successfully.
+            </div>
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                    <div class="error-message" id="nameError">
+                        <span class="error-icon">❌</span>
+                        Please enter your full name (minimum 2 characters).
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                    <div class="error-message" id="emailError">
+                        <span class="error-icon">❌</span>
+                        Please enter a valid email address.
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" rows="4" required 
+                              placeholder="Tell us how we can help you..."></textarea>
+                    <div class="error-message" id="messageError">
+                        <span class="error-icon">❌</span>
+                        Please enter your message (minimum 10 characters).
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full">
+                    <span class="btn-icon">📤</span>
+                    Send Message
+                </button>
+            </form>
+        </section>
+
+        <!-- To-Do List Section -->
+        <section class="section" id="todo">
+            <h2 class="section-title">
+                <span class="title-icon">✅</span>
+                My Tasks
+                <span class="task-counter" id="taskCounter">0 tasks</span>
+            </h2>
+            
+            <div class="todo-controls">
+                <div class="todo-input-group">
+                    <input type="text" id="todoInput" placeholder="Add a new task..." maxlength="100">
+                    <button type="button" class="btn btn-primary" onclick="addTodo()">
+                        <span class="btn-icon">➕</span>
+                        Add Task
+                    </button>
+                </div>
+                
+                <div class="todo-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="active">Active</button>
+                    <button class="filter-btn" data-filter="completed">Completed</button>
+                </div>
+            </div>
+            
+            <div class="todo-list" id="todoList">
+                <div class="empty-state" id="emptyState">
+                    <span class="empty-icon">📝</span>
+                    <h3>No tasks yet!</h3>
+                    <p>Add your first task above to get started organizing your day.</p>
+                </div>
+            </div>
+
+            <div class="todo-stats" id="todoStats" style="display: none;">
+                <div class="stat-item">
+                    <span class="stat-number" id="totalTasks">0</span>
+                    <span class="stat-label">Total</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="activeTasks">0</span>
+                    <span class="stat-label">Active</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="completedTasks">0</span>
+                    <span class="stat-label">Completed</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon">📋</span>
+                        TaskMaster Pro
+                    </div>
+                    <p>Making task management simple and beautiful.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#form">Contact</a></li>
+                        <li><a href="#todo">Tasks</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TaskMaster Pro. Built with ❤️ using HTML, CSS & JavaScript.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
