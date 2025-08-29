@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced CSS & JS Assignment</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>My Assignment Project</h1>
+    <nav>
+      <button onclick="showSection('portfolio')">Portfolio</button>
+      <button onclick="showSection('quiz')">Quiz</button>
+      <button onclick="showSection('joke')">Joke Generator</button>
+    </nav>
+  </header>
+
+  <!-- Responsive Portfolio Section -->
+  <section id="portfolio" class="active">
+    <h2>Responsive Portfolio</h2>
+    <div class="container">
+      <div class="box">Project 1</div>
+      <div class="box">Project 2</div>
+      <div class="box">Project 3</div>
+      <div class="box">Project 4</div>
+      <div class="box">Project 5</div>
+      <div class="box">Project 6</div>
+    </div>
+  </section>
+
+  <!-- Quiz Section -->
+  <section id="quiz">
+    <h2>Interactive Quiz</h2>
+    <div class="quiz-box">
+      <h3 id="question">Question text</h3>
+      <div id="answers"></div>
+      <button onclick="nextQuestion()">Next</button>
+      <p id="result"></p>
+    </div>
+  </section>
+
+  <!-- Joke Generator Section -->
+  <section id="joke">
+    <h2>😂 Random Joke Generator</h2>
+    <p id="joke-text">Click the button to get a joke!</p>
+    <button onclick="getJoke()">Get Joke</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
