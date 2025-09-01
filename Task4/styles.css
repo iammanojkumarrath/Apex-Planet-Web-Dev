@@ -1,0 +1,112 @@
+/* styles.css - responsive, clean modern aesthetic */
+:root{
+  --bg:#f7f8fb;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --accent:#2563eb;
+  --radius:12px;
+  --container:1100px;
+  --gap:18px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color-scheme: light;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:#0f172a;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.container{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:24px;
+}
+
+.site-header{
+  background:linear-gradient(90deg, rgba(255,255,255,0.6), rgba(255,255,255,0.9));
+  position:sticky;
+  top:0;
+  z-index:50;
+  border-bottom:1px solid rgba(15,23,42,0.05);
+}
+.header-inner{
+  display:flex;
+  gap:16px;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.brand{
+  font-weight:700;
+  text-decoration:none;
+  color:var(--accent);
+  font-size:1.05rem;
+}
+
+nav a{ margin-left:12px; text-decoration:none; color:inherit; font-weight:500; opacity:0.9}
+nav a:hover{opacity:1}
+
+.hero{
+  padding:36px;
+  background:linear-gradient(180deg, rgba(37,99,235,0.06), transparent);
+  border-radius:var(--radius);
+  margin-bottom:20px;
+}
+
+.lead{color:var(--muted); margin-top:8px}
+
+.btn{
+  display:inline-block;
+  background:var(--accent);
+  color:white;
+  padding:10px 14px;
+  border-radius:10px;
+  text-decoration:none;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+}
+.btn-outline{ background:white; border:1px solid rgba(15,23,42,0.06); color:var(--accent) }
+
+.cta-row{ margin-top:16px; display:flex; gap:10px; align-items:center }
+
+.card{ background:var(--card); padding:18px; border-radius:12px; box-shadow:0 6px 18px rgba(12,18,35,0.04); margin-bottom:18px }
+
+.card-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin:18px 0 }
+
+.project-list{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px }
+.project{ padding:12px; border-radius:10px; background:linear-gradient(180deg,rgba(37,99,235,0.03),transparent) }
+
+.todo-app{ margin-top:12px }
+#todo-form{ display:flex; gap:10px; margin-bottom:10px }
+#todo-form input{ flex:1; padding:10px; border-radius:8px; border:1px solid rgba(15,23,42,0.06) }
+.todo-list{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px }
+.todo-item{ display:flex; gap:12px; align-items:center; padding:10px; border-radius:8px; border:1px solid rgba(15,23,42,0.04) }
+.todo-item.completed .text{ text-decoration:line-through; opacity:0.6 }
+.small-btn{ padding:6px 10px; border-radius:8px; border:1px solid rgba(12,18,35,0.06); background:white; cursor:pointer; font-size:0.9rem }
+.small-btn.active{ background:rgba(37,99,235,0.08); border-color:rgba(37,99,235,0.2) }
+.todo-actions{ display:flex; justify-content:space-between; align-items:center; margin-top:10px }
+
+.product-controls{ display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-bottom:12px }
+.product-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px }
+.product-card{ padding:12px; background:linear-gradient(180deg,rgba(0,0,0,0.02),transparent); border-radius:10px; border:1px solid rgba(15,23,42,0.04) }
+.product-price{ font-weight:700; margin-top:6px; display:block }
+.muted{ color:var(--muted) }
+.small{ font-size:0.9rem }
+
+.contact-form label{ display:block; margin-bottom:10px }
+.contact-form input, .contact-form textarea{ width:100%; padding:10px; border-radius:8px; border:1px solid rgba(15,23,42,0.06) }
+
+.site-footer{ padding:14px 0; margin-top:18px; text-align:center; color:var(--muted) }
+
+/* Responsive tweaks */
+@media (max-width:720px){
+  .header-inner{ flex-direction:row; gap:8px }
+  .hero{ padding:20px }
+}

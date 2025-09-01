@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects — Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body id="page-projects">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Manoj Rath</a>
+      <nav>
+        <a href="index.html" class="nav-link">About</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Featured Projects</h2>
+      <div class="project-list">
+        <article class="project">
+          <h3>Fire Detection System</h3>
+          <p>Webcam-based fire detection with SMS alert integration (hackathon).</p>
+        </article>
+        <article class="project">
+          <h3>James AI (prototype)</h3>
+          <p>Voice assistant with LLM integration, emotion & face recognition.</p>
+        </article>
+        <article class="project">
+          <h3>Portfolio Website</h3>
+          <p>This multi-page responsive portfolio demonstrating web skills.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="todo-title">
+      <h2 id="todo-title">To-Do List (persistent with localStorage)</h2>
+      <div class="todo-app">
+        <form id="todo-form">
+          <input id="todo-input" placeholder="Add a task..." autocomplete="off" required />
+          <button type="submit" class="btn">Add</button>
+        </form>
+        <div class="todo-filters">
+          <button id="filter-all" class="small-btn active">All</button>
+          <button id="filter-active" class="small-btn">Active</button>
+          <button id="filter-completed" class="small-btn">Completed</button>
+        </div>
+        <ul id="todo-list" class="todo-list" aria-live="polite"></ul>
+        <div class="todo-actions">
+          <button id="clear-completed" class="small-btn">Clear completed</button>
+          <small id="todo-count"></small>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="product-title">
+      <h2 id="product-title">Product Listing (filter & sort)</h2>
+
+      <div class="product-controls">
+        <label>
+          Category:
+          <select id="category-filter">
+            <option value="all">All</option>
+          </select>
+        </label>
+
+        <label>
+          Sort by:
+          <select id="sort-by">
+            <option value="rating-desc">Rating (high → low)</option>
+            <option value="price-asc">Price (low → high)</option>
+            <option value="price-desc">Price (high → low)</option>
+          </select>
+        </label>
+
+        <label>
+          Max price:
+          <input id="max-price" type="number" min="0" placeholder="No limit" />
+        </label>
+      </div>
+
+      <div id="product-grid" class="product-grid" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year-2"></span> — Portfolio demo</small>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
